@@ -11,7 +11,15 @@ interface SidebarProps {
   items?: SidebarItem[];
 }
 
-export function Sidebar({ title = 'ReplyAI', items = [] }: SidebarProps) {
+const defaultItems: SidebarItem[] = [
+  { label: 'Anasayfa', href: '/', icon: 'Dashboard' },
+  { label: 'Mesajlar', href: '/messages', icon: 'Mesaj' },
+  { label: 'Platformlar', href: '/platforms', icon: 'Kanal' },
+  { label: 'Bilgi Bankasi', href: '/knowledge', icon: 'Bilgi' },
+  { label: 'Ayarlar', href: '/settings', icon: 'Ayar' },
+]
+
+export function Sidebar({ title = 'ReplyAI', items = defaultItems }: SidebarProps) {
   return (
     <aside className="w-64 h-screen bg-[#18181b] border-r border-zinc-800/60 p-4">
       <div className="text-lg font-semibold text-white mb-6">{title}</div>

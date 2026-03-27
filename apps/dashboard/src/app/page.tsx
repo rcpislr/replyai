@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { DashboardLayout } from '../components'
@@ -74,21 +75,21 @@ export default function Dashboard() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-3 gap-4">
-          <a href="/messages" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <Link href="/messages" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
             <div className="text-2xl mb-2">💬</div>
             <h3 className="font-semibold text-gray-900">Mesajlar</h3>
             <p className="text-sm text-gray-600">Müşteri mesajlarını yönet</p>
-          </a>
-          <a href="/platforms" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+          </Link>
+          <Link href="/platforms" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
             <div className="text-2xl mb-2">🔗</div>
             <h3 className="font-semibold text-gray-900">Platformlar</h3>
             <p className="text-sm text-gray-600">Bağlı platformlarını gör</p>
-          </a>
-          <a href="/knowledge" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+          </Link>
+          <Link href="/knowledge" className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
             <div className="text-2xl mb-2">📚</div>
             <h3 className="font-semibold text-gray-900">Bilgi Bankası</h3>
             <p className="text-sm text-gray-600">AI eğitim verilerini yönet</p>
-          </a>
+          </Link>
         </div>
       </div>
     </DashboardLayout>
