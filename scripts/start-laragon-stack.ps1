@@ -4,6 +4,7 @@ $repoRoot = Split-Path -Parent $PSScriptRoot
 $pgRoot = 'C:\Users\HP PRO\tools\pgsql'
 $redisRoot = 'C:\Users\HP PRO\tools\redis'
 $qdrantRoot = 'C:\Users\HP PRO\tools\qdrant-1.17.1'
+$nextApps = @('web', 'dashboard', 'admin')
 
 function Ensure-ProcessListening {
   param(
@@ -34,6 +35,13 @@ Ensure-ProcessListening -Port 6333 -StartAction {
 
 $singlePort = Get-NetTCPConnection -State Listen -LocalPort 4000 -ErrorAction SilentlyContinue
 if (-not $singlePort) {
+  foreach ($app in $nextApps) {
+    $nextPath = Join-Path $repoRoot "apps\$app\.next"
+    if (Test-Path $nextPath) {
+      Remove-Item -LiteralPath $nextPath -Recurse -Force
+    }
+  }
+
   Start-Process -FilePath 'pnpm.cmd' -ArgumentList '--filter', '@replyai/api', 'dev:single' -WorkingDirectory $repoRoot -WindowStyle Hidden
 }
 
