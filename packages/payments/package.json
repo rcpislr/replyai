@@ -1,0 +1,21 @@
+{
+  "name": "@replyai/payments",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.22.4",
+    "uuid": "^9.0.1",
+    "@replyai/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.7",
+    "typescript": "^5.3.3"
+  }
+}
