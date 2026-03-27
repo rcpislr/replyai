@@ -31,7 +31,7 @@ docker-compose up -d  # PostgreSQL, Redis, Qdrant
 ```bash
 cd infra/docker
 docker-compose -f docker-compose.production.yml up -d
-# Access: http://localhost:3000
+# Access: http://localhost
 ```
 
 ---
@@ -164,7 +164,7 @@ docker exec -it replyai-db psql -U postgres -d replyai
 2. Copy `.env.production`
 3. Update secrets (JWT_SECRET, MASTER_KEY, API_KEYs)
 4. Run: `docker-compose -f docker-compose.production.yml up -d`
-5. Access: http://localhost:3000
+5. Access: http://localhost
 
 ### Scaling
 - Use managed PostgreSQL (RDS, Supabase)
@@ -204,7 +204,7 @@ Or register a new account!
 - Check `PRODUCTION_GUIDE.md` for detailed setup
 - View logs: `docker logs <service-name>`
 - Database queries: `docker exec -it replyai-db psql`
-- API health: `curl http://localhost:3000/health`
+- API health: `curl http://localhost/health`
 
 ---
 

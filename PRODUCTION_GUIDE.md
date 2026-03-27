@@ -9,11 +9,11 @@ docker-compose -f docker-compose.production.yml up -d
 ```
 
 This will start:
-- **Nginx** (port 3000) - Main entry point
-- **API** (port 3001) - Node.js Express backend
-- **Dashboard** (port 3002) - Tenant panel
-- **Admin** (port 3003) - Owner panel
-- **Web** (port 3004) - Marketing website
+- **Nginx** (port 80) - Main entry point
+- **API** - Internal Node.js Express backend
+- **Dashboard** - Internal tenant panel service
+- **Admin** - Internal owner panel service
+- **Web** - Internal marketing website service
 - **PostgreSQL** - Database
 - **Redis** - Cache & queues
 - **Qdrant** - Vector database
@@ -21,11 +21,11 @@ This will start:
 ### 2. Access the System
 
 ```
-🌐 Main:       http://localhost:3000
-📊 Dashboard:  http://localhost:3000/dashboard
-⚙️ Admin:      http://localhost:3000/admin
-💬 API:        http://localhost:3000/api
-📄 Web:        http://localhost:3000
+🌐 Main:       http://localhost
+📊 Dashboard:  http://localhost/dashboard
+⚙️ Admin:      http://localhost/admin
+💬 API:        http://localhost/api
+📄 Web:        http://localhost
 ```
 
 ### 3. Demo Credentials
@@ -209,12 +209,8 @@ GET /api/dashboard/recent-messages
 
 ### Health Checks
 ```bash
-# Check all services
-curl http://localhost:3000/health
-
-# Check individual services
-curl http://localhost:3001/health  # API
-curl http://localhost:3000/dashboard/health  # Dashboard
+# Check reverse proxy health
+curl http://localhost/health
 ```
 
 ### Logs

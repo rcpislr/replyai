@@ -5,7 +5,9 @@ import APIClient from '@replyai/api-client';
 import type { Message } from '@replyai/shared';
 import { useAuth } from '../contexts/AuthContext';
 
-const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+const apiBaseUrl =
+  process.env.NEXT_PUBLIC_API_URL ||
+  (process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3001');
 
 export function useFetch<T>(url: string) {
   const { token } = useAuth();
