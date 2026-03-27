@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="replyaiGradientWeb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0a0a0f" />
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#replyaiGradientWeb)" />
+  <path d="M22 23h14c5 0 8 3 8 7 0 3-2 6-5 7l4 6h-8l-3-5h-3v5h-7V23zm7 10h7c1 0 2-1 2-2s-1-2-2-2h-7v4z" fill="#fff" />
+</svg>
