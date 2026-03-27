@@ -5,6 +5,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:single": "pnpm --filter @replyai/api run dev:single",
+    "laragon:start": "powershell -ExecutionPolicy Bypass -File ./scripts/start-laragon-stack.ps1",
+    "laragon:stop": "powershell -ExecutionPolicy Bypass -File ./scripts/stop-laragon-stack.ps1",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "db:generate": "pnpm --filter @replyai/api run db:generate",
